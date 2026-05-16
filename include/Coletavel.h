@@ -13,7 +13,7 @@ class Coletavel {
         string simbolo;
 
     public:
-        Coletavel(int x, int y);
+        Coletavel(int x, int y, const string& simb);
         virtual ~Coletavel();
         // virtual void aplicarEfeito(Placar& p) = 0; DEIXEI COMENTADO POIS AINDA NÃO EXISTE A CLASSE PLACAR
         virtual string getTipo() const = 0;

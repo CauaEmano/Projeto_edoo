@@ -1,7 +1,6 @@
-#include "Coletavel.h"
-#include <string>
+#include "../include/Coletavel.h"
 
-Coletavel::Coletavel(int x, int y) : posicaoX(x), posicaoY(y) {};
+Coletavel::Coletavel(int x, int y, const string& simb) : posicaoX(x), posicaoY(y), simbolo(simb) {};
 
 int Coletavel::getPosicaoX() const {
     return this->posicaoX;
@@ -16,6 +15,6 @@ string Coletavel::getSimbolo() const {
 }
 
 ostream& operator<<(ostream& saida, const Coletavel& coletavel) {
-    saida << "símbolo: " << coletavel.simbolo << " Ponto: (" << coletavel.posicaoX << ", " << coletavel.posicaoY << ")";
+    saida << "Símbolo: " << coletavel.simbolo << "\n Ponto: (" << coletavel.posicaoX << ", " << coletavel.posicaoY << ")";
     return saida;
 }
