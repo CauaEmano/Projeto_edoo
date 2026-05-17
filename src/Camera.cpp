@@ -12,4 +12,4 @@ Camera::Camera(int x, int y) : Coletavel(x, y, "📷"), ofuscada(false) {}
 
 std::string Camera::getTipo() const {return "Camera";}
 
-bool Camera::estaOfuscada() const {return ofuscada;}
+bool Camera::estaOfuscada() const {return this->ofuscada;}
