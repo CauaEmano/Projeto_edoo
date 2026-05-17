@@ -8,7 +8,7 @@ class Banana : public Coletavel{
 
         Banana(int x, int y);
 
-        // void aplicarEfeito(Placar& placar) override;
+        void aplicarEfeito(Placar& placar) override;
 
         std::string getTipo() const override;
 };

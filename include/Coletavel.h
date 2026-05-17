@@ -2,6 +2,7 @@
 #define COLETAVEL_H
 #include <string>
 #include <ostream>
+#include "Placar.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ class Coletavel {
     public:
         Coletavel(int x, int y, const string& simb);
         virtual ~Coletavel();
-        // virtual void aplicarEfeito(Placar& p) = 0; DEIXEI COMENTADO POIS AINDA NÃO EXISTE A CLASSE PLACAR
+        virtual void aplicarEfeito(Placar& p) = 0; 
         virtual string getTipo() const = 0;
         int getPosicaoX() const;
         int getPosicaoY() const;

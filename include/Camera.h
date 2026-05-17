@@ -10,7 +10,7 @@ class Camera : public Coletavel {
     public:
         Camera(int x, int y);
 
-        // void aplicarEfeito(Placar& placar) override;
+        void aplicarEfeito(Placar& placar) override;
         string getTipo() const override;
 
         bool estaOfuscada() const;

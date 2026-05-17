@@ -1,11 +1,14 @@
 #include "../include/Banana.h"
-#include "../include/Placar.h" //Pronto para quando o placar tiver feito
+#include "../include/Placar.h"
 #include <iostream>
 
 Banana::Banana(int x, int y) : Coletavel(x, y, "🍌") {}
 
-/* void Banana::aplicarEfeito(Placar& placar) {
-    Para quando o placar tiver feito
-} */
+void Banana::aplicarEfeito(Placar& placar) {
+    placar.zerarRosas();
+    placar.incrementarBananas();
+    cout << "Escorregou na banana! Rosas zeradas. "
+        << "Bananas coletadas: " << placar.getBananas() << "/3\n";
+} 
 
 string Banana::getTipo() const { return "Banana"; }

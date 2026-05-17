@@ -9,7 +9,7 @@ class Rosa : public Coletavel{
     public:
         Rosa(int x, int y, int pts);
 
-        //void aplicarEfeito(Placar& placar) override;
+        void aplicarEfeito(Placar& placar) override;
 
         string getTipo() const override;
         int getPontos() const;
