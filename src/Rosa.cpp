@@ -10,4 +10,4 @@ Rosa::Rosa(int x, int y, int pts) : Coletavel(x, y, "🌹"), pontos(pts) {}
 
 std::string Rosa::getTipo() const { return "Rosa"; }
 
-int Rosa::getPontos() const {return pontos;}
+int Rosa::getPontos() const {return thus->pontos;}
