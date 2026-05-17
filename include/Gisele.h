@@ -1,16 +1,16 @@
 #ifndef GISELE_H 
 #define GISELE_H
 #include <string>
-#include <ostream>
+#include <iostream>
+#include "Coletavel.h"
 
 using namespace std;
-
-class Coletavel; 
 
 class Gisele {
 private:
     int posicaoY;
     bool pulando;
+    bool agachada;
     float velocidade;
     string estado;
     string simbolo;
@@ -24,7 +24,7 @@ public:
     void atualizarFisica();
     
     
-    bool detectarColisao(Coletavel& c);
+    bool detectarColisao(const Coletavel& c) const;
 
     
     int getPosicaoY() const;
