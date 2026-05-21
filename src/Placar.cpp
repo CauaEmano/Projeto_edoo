@@ -27,7 +27,7 @@ int Placar::getCameras() const {
 }
 
 bool Placar::gameOver() const {
-	return cameras >= 3 || bananas >= 3;
+	return cameras >= MAX_PENALIDADES || bananas >= MAX_PENALIDADES;
 }
 
 ostream& operator<<(ostream& os, const Placar& p) {

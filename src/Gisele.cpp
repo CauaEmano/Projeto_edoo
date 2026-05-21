@@ -4,9 +4,9 @@ Gisele::Gisele() : posicaoY(525), pulando(false), agachada(false), velocidade(0.
 
 void Gisele::pular() {
     if (!this->pulando) {
-        this->velocidade = -14.0f;
+        this->velocidade = -2.0f;
         this->agachada = false;
-        this->posicaoY = 550;
+        this->posicaoY = POSICAO_PULO;
         this->pulando = true;
         this->estado = "PULANDO";
         this->simbolo = "🤸‍♀️"; 
@@ -17,7 +17,7 @@ void Gisele::pular() {
 void Gisele::agachar() {
     if (!this->pulando) {
         this->agachada = true;
-        this->posicaoY = 500;
+        this->posicaoY = ALTURA_AGACHADA;
         this->estado = "AGACHADA";
         this->simbolo = "🧎‍♀️"; 
     }
@@ -25,11 +25,11 @@ void Gisele::agachar() {
 
 void Gisele::atualizarFisica() {
     if (this->pulando) {
-        this->velocidade += 1.0f; 
+        this->velocidade += 0.5f; 
         this->posicaoY += static_cast<int>(this->velocidade);
 
-        if (this->posicaoY >= 525) {
-            this->posicaoY = 525;
+        if (this->posicaoY >= POSICAO_CHAO) {
+            this->posicaoY = POSICAO_CHAO;
             this->velocidade = 0.0f;
             this->pulando = false;
             this->estado = "PARADA"; 
@@ -37,7 +37,7 @@ void Gisele::atualizarFisica() {
         }
     } else if (this->agachada){
         this->agachada = false;
-        this->posicaoY = 525;
+        this->posicaoY = POSICAO_CHAO;
         this->estado = "PARADA";
         this->simbolo = "👧";
     }

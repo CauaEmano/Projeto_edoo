@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <ctime>
 
-Fase::Fase() : distanciaPercorrida(0), velocidadeAtual(1.0f), ciclo(0), tempoNoUltimoCiclo(0) {
+Fase::Fase() : distanciaPercorrida(0), velocidadeAtual(VEL_INICIAL), ciclo(0), tempoNoUltimoCiclo(0) {
     srand(time(nullptr));
 }
 
@@ -21,20 +21,25 @@ void Fase::atualizar(int deltaT) {
     distanciaPercorrida += velocidadeAtual * deltaT;
     tempoNoUltimoCiclo += deltaT;
 
-    if (tempoNoUltimoCiclo >= 10) {
+    if (tempoNoUltimoCiclo >= DURACAO_CICLO) {
         ciclo++;
         velocidadeAtual += 0.5f;
         tempoNoUltimoCiclo = 0;
+        std::cout << "[Fase] Ciclo " << ciclo
+                << " — velocidade: " << velocidadeAtual << "\n";
+
     }
 
-    gerarColetavel();
+    if (rand() % 4 == 0){
+        gerarColetavel();
+    }
 }
 
 void Fase::gerarColetavel() {
 
     int tipo = rand() % 3;
-    int x = rand() % 100;
-    int y = rand() % 100;
+    int x = 10;
+    int y = 0;
 
     Coletavel* novo = nullptr;
 
@@ -62,6 +67,8 @@ int Fase::getDistancia() const {
 float Fase::getVelocidade() const {
     return this->velocidadeAtual;
 }
+
+int Fase::getCiclo() const { return ciclo; }
 
 bool Fase::fimDaFase(const Placar& p) const {
     return distanciaPercorrida >= 700 || p.gameOver();
