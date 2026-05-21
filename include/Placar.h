@@ -8,6 +8,8 @@ private:
 	int rosas;
 	int bananas;
 	int cameras;
+
+	static const int MAX_PENALIDADES = 3;
 public:
 	Placar();
 

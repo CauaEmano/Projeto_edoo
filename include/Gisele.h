@@ -15,6 +15,10 @@ private:
     string estado;
     string simbolo;
 
+    static const int POSICAO_CHAO = 0;
+    static const int POSICAO_PULO = 3;
+    static const int ALTURA_AGACHADA = -1;
+
 public:
     
     Gisele();
