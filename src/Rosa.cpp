@@ -2,7 +2,7 @@
 #include "../include/Placar.h"
 #include <iostream>
 
-Rosa::Rosa(int x, int y, int pts) : Coletavel(x, y, "🌹"), pontos(pts) {}
+Rosa::Rosa(int x, int y, int pts=1) : Coletavel(x, y, "🌹"), pontos(pts) {}
 
 void Rosa::aplicarEfeito(Placar& placar) {
     placar.addRosas(this->pontos);
