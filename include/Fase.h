@@ -2,11 +2,8 @@
 #define FASE_H
 
 #include <vector>
-#include <iostream>
 #include "Coletavel.h"
 #include "Placar.h"
-
-using namespace std;
 
 class Fase {
 
@@ -15,7 +12,7 @@ private:
     float velocidadeAtual;
     int ciclo;
     int tempoNoUltimoCiclo;
-    vector<Coletavel*> coletaveis;
+    std::vector<Coletavel*> coletaveis;
 
     static const int DISTANCIA_TOTAL = 700;
     static const int DURACAO_CICLO = 10;
@@ -28,7 +25,7 @@ public:
 
     void atualizar(int deltaT);
     void gerarColetavel();
-    vector<Coletavel*>& getColetaveis();
+    std::vector<Coletavel*>& getColetaveis();
     int getDistancia() const;
     float getVelocidade() const;
     int getCiclo() const;

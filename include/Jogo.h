@@ -11,6 +11,7 @@ private:
     Fase fase;
     Placar placar;
     bool rodando;
+    bool ofuscado;
 
 public:
     Jogo();
@@ -19,9 +20,9 @@ public:
     void iniciar();
     void processarEntrada(char entrada);
     void atualizar();
-    void renderizar();
-    bool estaRodando();
-    void exibirResultado();
+    void renderizar() const;
+    bool estaRodando() const;
+    void exibirResultado() const;
 };
 
 #endif 

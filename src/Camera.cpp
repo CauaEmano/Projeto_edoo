@@ -10,15 +10,15 @@ void Camera::aplicarEfeito(Placar& placar){
     placar.incrementarCameras();
     this->ofuscada = true;
 
-    cout << "Flash da câmera!\n";
-    cout << "████████████████████████████████\n";
-    cout << "████████████████████████████████\n";
-    cout << "████████████████████████████████\n";
+    std::cout << "Flash da câmera!\n";
+    std::cout << "████████████████████████████████\n";
+    std::cout << "████████████████████████████████\n";
+    std::cout << "████████████████████████████████\n";
 
-    this_thread::sleep_for(chrono::seconds(1));
+    std::this_thread::sleep_for(std::chrono::seconds(1)); // Pausa a execução da thread atual por 1 segundo
 
     this->ofuscada = false;
-    cout << "Câmeras coletadas: " << placar.getCameras() << "/3\n";
+    std::cout << "Câmeras coletadas: " << placar.getCameras() << "/3\n";
 }
 
 std::string Camera::getTipo() const {return "Camera";}

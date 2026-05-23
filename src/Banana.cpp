@@ -7,8 +7,8 @@ Banana::Banana(int x, int y) : Coletavel(x, y, "🍌") {}
 void Banana::aplicarEfeito(Placar& placar) {
     placar.zerarRosas();
     placar.incrementarBananas();
-    cout << "Escorregou na banana! Rosas zeradas. "
+    std::cout << "Escorregou na banana! Rosas zeradas. "
         << "Bananas coletadas: " << placar.getBananas() << "/3\n";
 } 
 
-string Banana::getTipo() const { return "Banana"; }
+std::string Banana::getTipo() const { return "Banana"; }

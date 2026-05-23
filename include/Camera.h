@@ -11,7 +11,7 @@ class Camera : public Coletavel {
         Camera(int x, int y);
 
         void aplicarEfeito(Placar& placar) override;
-        string getTipo() const override;
+        std::string getTipo() const override;
 
         bool estaOfuscada() const;
 };
