@@ -4,9 +4,10 @@
 #include "../include/Camera.h"
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 
 Fase::Fase() : distanciaPercorrida(0), velocidadeAtual(VEL_INICIAL), ciclo(0), tempoNoUltimoCiclo(0) {
-    srand(time(nullptr));
+    std::srand(time(nullptr));
 }
 
 Fase::~Fase() {
@@ -18,26 +19,26 @@ Fase::~Fase() {
 
 void Fase::atualizar(int deltaT) {
 
-    distanciaPercorrida += velocidadeAtual * deltaT;
+    distanciaPercorrida += static_cast<int>(velocidadeAtual * deltaT); //Mantem em inteiro
     tempoNoUltimoCiclo += deltaT;
 
     if (tempoNoUltimoCiclo >= DURACAO_CICLO) {
         ciclo++;
-        velocidadeAtual += 0.5f;
+        velocidadeAtual += VEL_AUMENTO;
         tempoNoUltimoCiclo = 0;
         std::cout << "[Fase] Ciclo " << ciclo
                 << " — velocidade: " << velocidadeAtual << "\n";
 
     }
 
-    if (rand() % 4 == 0){
+    if (std::rand() % 4 == 0){
         gerarColetavel();
     }
 }
 
 void Fase::gerarColetavel() {
 
-    int tipo = rand() % 3;
+    int tipo = std::rand() % 3;
     int x = 10;
     int y = 0;
 
@@ -56,7 +57,7 @@ void Fase::gerarColetavel() {
     coletaveis.push_back(novo);
 }
 
-vector<Coletavel*>& Fase::getColetaveis() {
+std::vector<Coletavel*>& Fase::getColetaveis() {
     return coletaveis;
 }
 
@@ -71,5 +72,5 @@ float Fase::getVelocidade() const {
 int Fase::getCiclo() const { return ciclo; }
 
 bool Fase::fimDaFase(const Placar& p) const {
-    return distanciaPercorrida >= 700 || p.gameOver();
+    return distanciaPercorrida >= DISTANCIA_TOTAL || p.gameOver();
 } 

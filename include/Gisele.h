@@ -4,16 +4,14 @@
 #include <iostream>
 #include "Coletavel.h"
 
-using namespace std;
-
 class Gisele {
 private:
     int posicaoY;
     bool pulando;
     bool agachada;
     float velocidade;
-    string estado;
-    string simbolo;
+    std::string estado;
+    std::string simbolo;
 
     static const int POSICAO_CHAO = 0;
     static const int POSICAO_PULO = 3;
@@ -32,10 +30,10 @@ public:
 
     
     int getPosicaoY() const;
-    string getEstado() const;
-    string getSimbolo() const;
+    std::string getEstado() const;
+    std::string getSimbolo() const;
     
-    friend ostream& operator<<(ostream& saida, const Gisele& g);
+    friend std::ostream& operator<<(std::ostream& saida, const Gisele& g);
 };
 
 #endif

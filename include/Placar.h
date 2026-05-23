@@ -1,7 +1,6 @@
 #ifndef PLACAR_H
 #define PLACAR_H
 #include <ostream>
-using namespace std;
 
 class Placar {
 private:
@@ -25,7 +24,7 @@ public:
 
 	bool gameOver() const;
 
-	friend ostream& operator<<(ostream& os, const Placar& p);
+	friend std::ostream& operator<<(std::ostream& os, const Placar& p);
 };
 
 #endif

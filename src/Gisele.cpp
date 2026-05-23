@@ -1,6 +1,6 @@
 #include "../include/Gisele.h"
 
-Gisele::Gisele() : posicaoY(525), pulando(false), agachada(false), velocidade(0.0f), estado("PARADA"), simbolo("👧") {}
+Gisele::Gisele() : posicaoY(POSICAO_CHAO), pulando(false), agachada(false), velocidade(0.0f), estado("PARADA"), simbolo("👧") {}
 
 void Gisele::pular() {
     if (!this->pulando) {
@@ -10,7 +10,7 @@ void Gisele::pular() {
         this->pulando = true;
         this->estado = "PULANDO";
         this->simbolo = "🤸‍♀️"; 
-        cout << "[Gisele] Pulou! Posição Y: " << posicaoY << "\n";
+        std::cout << "[Gisele] Pulou! Posição Y: " << posicaoY << "\n";
     }
 }
 
@@ -52,14 +52,14 @@ int Gisele::getPosicaoY() const {
     return this->posicaoY;
 }
 
-string Gisele::getEstado() const {
+std::string Gisele::getEstado() const {
     return this->estado;
 }
-string Gisele::getSimbolo() const {
+std::string Gisele::getSimbolo() const {
     return this->simbolo;
 }
 
-ostream& operator<<(ostream& saida, const Gisele& gisele) {
+std::ostream& operator<<(std::ostream& saida, const Gisele& gisele) {
     saida << gisele.simbolo << " [Estado: " << gisele.estado 
           << " | PosY: " << gisele.posicaoY 
           << " | Vel: " << gisele.velocidade << "]";

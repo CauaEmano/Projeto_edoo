@@ -30,7 +30,7 @@ bool Placar::gameOver() const {
 	return cameras >= MAX_PENALIDADES || bananas >= MAX_PENALIDADES;
 }
 
-ostream& operator<<(ostream& os, const Placar& p) {
+std::ostream& operator<<(std::ostream& os, const Placar& p) {
 	os << "=== Placar ===\n"
 		<< "Rosas  : " << p.rosas << "\n"
 		<< "Bananas: " << p.bananas << "\n"

@@ -7,11 +7,11 @@ class Rosa : public Coletavel{
         int pontos;
 
     public:
-        Rosa(int x, int y, int pts);
+        Rosa(int x, int y, int pts = 1);
 
         void aplicarEfeito(Placar& placar) override;
 
-        string getTipo() const override;
+        std::string getTipo() const override;
         int getPontos() const;
 };
 
