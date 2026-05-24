@@ -1,6 +1,7 @@
 #include "../include/Jogo.h"
 #include <iostream>
 #include <vector>
+#include <stdexcept>
 
 using namespace std;
 
@@ -18,10 +19,21 @@ void Jogo::iniciar() {
         renderizar();
 
         char entrada;
-        cout << "Acao: ";
-        cin >> entrada;
+        bool entradaValida = false;
 
-        processarEntrada(entrada);
+        while (!entradaValida) {
+            cout << "Acao: ";
+            cin >> entrada;
+
+            try {
+                processarEntrada(entrada);
+            }
+            catch(const std::invalid_argument& e) {
+                std::cerr << "Erro: " << e.what();
+                continue;
+            }
+        }
+
         atualizar();
     }
 }
@@ -36,7 +48,7 @@ void Jogo::processarEntrada(char entrada) {
     } else if (entrada == 'q') {
         rodando = false;
     } else {
-        cout << "Entrada inválida!\n";
+        throw std::invalid_argument("Entrada inválida!\n");
     }
 }
 
