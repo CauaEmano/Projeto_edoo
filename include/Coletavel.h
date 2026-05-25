@@ -19,6 +19,7 @@ class Coletavel {
         int getPosicaoX() const;
         int getPosicaoY() const;
         std::string getSimbolo() const;
+        void mover(int dx);
         friend std::ostream& operator<<(std::ostream& saida, const Coletavel& coletavel);
 
 };

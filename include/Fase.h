@@ -26,6 +26,7 @@ public:
     void atualizar(int deltaT);
     void gerarColetavel();
     std::vector<Coletavel*>& getColetaveis();
+    const std::vector<Coletavel*>& getColetaveis() const; //renderizar é const e precisa acessar aqui
     int getDistancia() const;
     float getVelocidade() const;
     int getCiclo() const;
