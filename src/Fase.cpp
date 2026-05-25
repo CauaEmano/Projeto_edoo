@@ -31,6 +31,10 @@ void Fase::atualizar(int deltaT) {
 
     }
 
+    for (Coletavel* c: coletaveis){
+        c->mover(-1);
+    }
+
     if (std::rand() % 4 == 0){
         gerarColetavel();
     }
@@ -59,6 +63,10 @@ void Fase::gerarColetavel() {
 
 std::vector<Coletavel*>& Fase::getColetaveis() {
     return coletaveis;
+}
+
+const std::vector<Coletavel*>& Fase::getColetaveis() const {
+    return coletaveis; 
 }
 
 int Fase::getDistancia() const {

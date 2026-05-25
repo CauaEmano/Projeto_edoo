@@ -17,6 +17,10 @@ std::string Coletavel::getSimbolo() const {
     return this->simbolo;
 }
 
+void Coletavel::mover(int dx){
+    posicaoX += dx;
+}
+
 std::ostream& operator<<(std::ostream& saida, const Coletavel& coletavel) {
     saida << "Símbolo: " << coletavel.simbolo << "\n Ponto: (" << coletavel.posicaoX << ", " << coletavel.posicaoY << ")";
     return saida;
