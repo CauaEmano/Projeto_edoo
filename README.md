@@ -63,8 +63,8 @@ gisele.exe      # Windows
 
 | Tecla | Ação             |
 |-------|------------------|
-| `p`   | Pular            |
-| `a`   | Agachar          |
+| `w`   | Pular            |
+| `s`   | Agachar          |
 | `q`   | Sair do jogo     |
 
 ---
