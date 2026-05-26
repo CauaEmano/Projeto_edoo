@@ -14,14 +14,16 @@ class Jogo {
         bool rodando;
         bool ofuscado;
 
-    public:
-        Jogo();   // Construtor da classe com valores padrão
-        
-        void iniciar();   // Inicia a partida para o jogador
         void processarEntrada(char entrada);   // Lê e executa qual entrada do jogador
         void atualizar();   // Atualiza os estados do jogo a cada ação
         void renderizar() const;   // Renderiza o jogo no terminal por linha de comando a cada ação
         bool estaRodando() const;   // Verifica se a partida acabou
+
+    public:
+        Jogo();   // Construtor da classe com valores padrão
+        
+        void iniciar();   // Inicia a partida para o jogador
+        
         void exibirResultado() const;   // Exibe o resultado do jogador na partida
 
 };
