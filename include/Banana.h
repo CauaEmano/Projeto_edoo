@@ -5,12 +5,12 @@
 class Banana : public Coletavel{
 
     public:
+        Banana(int x, int y);   // Construtor da classe
 
-        Banana(int x, int y);
+        void aplicarEfeito(Placar& placar) override;   // Efeito de banana zera a quantidade de rosas coletadas, caso colete 3 dá game over
 
-        void aplicarEfeito(Placar& placar) override;
+        inline std::string getTipo() const override { return "Banana"; }   // get para tipo do objeto
 
-        std::string getTipo() const override;
 };
 
 #endif

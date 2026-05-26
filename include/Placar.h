@@ -3,28 +3,34 @@
 #include <ostream>
 
 class Placar {
-private:
-	int rosas;
-	int bananas;
-	int cameras;
 
-	static const int MAX_PENALIDADES = 3;
-public:
-	Placar();
+	private:
+		int rosas;
+		int bananas;
+		int cameras;
 
-	void addRosas(int pts);
-	void zerarRosas();
-	int getRosas() const;
+		static const int MAX_PENALIDADES = 3;
 
-	void incrementarBananas();
-	int getBananas() const;
+	public:
+		Placar();   // Construtor da classe com valores padrão
 
-	void incrementarCameras();
-	int getCameras() const;
+		// Métodos relacionados a rosas
+		void addRosas(int pts);   // Adiciona a quantidade de rosas aos pontos
+		void zerarRosas();   // Zera a quantidade de rosas coletadas
+		inline int getRosas() const { return this->rosas; }   // get para a quantidade de rosas coletadas
 
-	bool gameOver() const;
+		// Métodos relacionados a bananas
+		void incrementarBananas();   // Conta bananas coletadas para game over
+		inline int getBananas() const { return this->bananas; }   // get para quantidade de bananas coletadas
 
-	friend std::ostream& operator<<(std::ostream& os, const Placar& p);
+		// Métodos relacionados a câmeras
+		void incrementarCameras();   // Adiciona quantidade de câmeras coletadas
+		inline int getCameras() const { return this->cameras; }   // get para quantidade de câmeras coletadas
+
+		bool gameOver() const;   // Verifica casos de game over
+
+		friend std::ostream& operator<<(std::ostream& os, const Placar& p);   // Sobrecarga de operador << para saída formatada do placar
+
 };
 
 #endif

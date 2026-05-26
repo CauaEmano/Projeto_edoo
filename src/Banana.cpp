@@ -8,7 +8,5 @@ void Banana::aplicarEfeito(Placar& placar) {
     placar.zerarRosas();
     placar.incrementarBananas();
     std::cout << "Escorregou na banana! Rosas zeradas. "
-        << "Bananas coletadas: " << placar.getBananas() << "/3\n";
-} 
-
-std::string Banana::getTipo() const { return "Banana"; }
+              << "Bananas coletadas: " << placar.getBananas() << "/3\n";
+}
