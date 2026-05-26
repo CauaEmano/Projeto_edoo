@@ -10,10 +10,22 @@ Jogo::Jogo() : rodando(false), ofuscado(false) {}
 void Jogo::iniciar() {
     cout << "====================================\n";
     cout << "      INICIANDO A CORRIDA!          \n";
-    cout << "====================================\n";
+    cout << "====================================\n\n";
     rodando = true;
+    
+    cout << "Regras:\n"
+         << "A passarela tem 700 metros de extensão.\n"
+         << "A velocidade aumenta a cada 10 segundos de jogo.\n" 
+         << "Banana → zera as rosas; 3 bananas = game over.\n" 
+         << "Câmera → ofusca a tela por 1 segundo; 3 câmeras = game over.\n" 
+         << "Rosa → adiciona pontos ao placar final.\n\n";
 
-    cout << "Comandos: [w] pular | [s] agachar | [q] sair\n\n";
+    cout << "====================================\n\n";
+    
+    cout << "Comandos: [w] pular | [s] agachar | [d] andar | [q] sair\n\n";
+    cout << "====================================\n\n";
+
+    cout << "Pronto para jogar?\n";
 
     while (rodando){
         renderizar();
@@ -22,8 +34,9 @@ void Jogo::iniciar() {
         bool entradaValida = false;
 
         while (!entradaValida) {
-            cout << "Ação: ";
+            cout << "Digite sua ação: ";
             cin >> entrada;
+            cout << "\n";
 
             try {
                 processarEntrada(entrada);
@@ -45,15 +58,16 @@ void Jogo::processarEntrada(char entrada) {
         gisele.pular();
     } else if (entrada == 's') {
         gisele.agachar();
+    } else if (entrada == 'd') {
+
     } else if (entrada == 'q') {
         rodando = false;
     } else {
-        throw std::invalid_argument("Entrada inválida! Use [w], [s] ou [q]!\n");
+        throw std::invalid_argument("Entrada inválida! Use [w], [s], [d] ou [q]!\n");
     }
 }
 
 void Jogo::atualizar() {
-    gisele.atualizarFisica();
 
     fase.atualizar(1);
 
@@ -77,6 +91,8 @@ void Jogo::atualizar() {
         }
     }
 
+    gisele.atualizarFisica();
+
     if (fase.fimDaFase(placar)) {
         rodando = false;
     }
@@ -93,7 +109,7 @@ void Jogo::renderizar() const{
     
     for (const Coletavel* c: coletaveis){
         if (c->getPosicaoX() <= 5){
-            cout << " >> Aproximando: " << c->getTipo() << " (distância: " << c->getPosicaoX() << ")\n";
+            cout << " >> Aproximando: " << c->getTipo() << " (distância: (x = " << c->getPosicaoX() << ", y = " << c->getPosicaoY() << "))\n";
         }
     }
     cout << "====================================\n";

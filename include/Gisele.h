@@ -14,9 +14,9 @@ class Gisele {
         std::string estado;
         std::string simbolo;
 
-        static const int POSICAO_CHAO = 0;
-        static const int POSICAO_PULO = 3;
-        static const int ALTURA_AGACHADA = -1;
+        static const int POSICAO_PARADA = 1;
+        static const int POSICAO_PULO = 2;
+        static const int ALTURA_AGACHADA = 0;
 
     public:   
         Gisele();   // Construtor da classe com valores padrão

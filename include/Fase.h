@@ -17,7 +17,7 @@ class Fase {
         static const int DISTANCIA_TOTAL = 700;
         static const int DURACAO_CICLO = 10;
         static constexpr float VEL_INICIAL = 1.0f;
-        static constexpr float VEL_AUMENTO = 0.2f;
+        static constexpr float VEL_AUMENTO = 1.0f;
 
     public:
         Fase();   // Construtor da classe com valores padrão

@@ -18,7 +18,7 @@ void Camera::aplicarEfeito(Placar& placar){
     std::this_thread::sleep_for(std::chrono::seconds(1));   // Pausa a execução da thread atual por 1 segundo
 
     this->ofuscada = false;
-    std::cout << "Câmeras coletadas: " << placar.getCameras() << "/3\n";
+    std::cout << simbolo << " Câmeras coletadas: " << placar.getCameras() << "/3\n";
 }
 
 bool Camera::estaOfuscada() const { return this->ofuscada; }

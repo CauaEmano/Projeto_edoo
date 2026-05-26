@@ -1,6 +1,6 @@
 #include "../include/Gisele.h"
 
-Gisele::Gisele() : posicaoY(POSICAO_CHAO), pulando(false), agachada(false), velocidade(0.0f), estado("PARADA"), simbolo("👧") {}
+Gisele::Gisele() : posicaoY(POSICAO_PARADA), pulando(false), agachada(false), velocidade(0.0f), estado("ANDANDO"), simbolo("🚶") {}
 
 void Gisele::pular() {
     if (!this->pulando) {
@@ -28,18 +28,18 @@ void Gisele::atualizarFisica() {
         this->velocidade += 0.5f; 
         this->posicaoY += static_cast<int>(this->velocidade);
 
-        if (this->posicaoY >= POSICAO_CHAO) {
-            this->posicaoY = POSICAO_CHAO;
+        if (this->posicaoY >= POSICAO_PARADA) {
+            this->posicaoY = POSICAO_PARADA;
             this->velocidade = 0.0f;
             this->pulando = false;
-            this->estado = "PARADA"; 
-            this->simbolo = "👧"; 
+            this->estado = "ANDANDO"; 
+            this->simbolo = "🚶"; 
         }
     } else if (this->agachada){
         this->agachada = false;
-        this->posicaoY = POSICAO_CHAO;
-        this->estado = "PARADA";
-        this->simbolo = "👧";
+        this->posicaoY = POSICAO_PARADA;
+        this->estado = "ANDANDO";
+        this->simbolo = "🚶";
     }
 }
 
@@ -50,7 +50,6 @@ bool Gisele::detectarColisao(const Coletavel& c) const {
 std::ostream& operator<<(std::ostream& saida, const Gisele& gisele) {
     saida << gisele.simbolo 
           << " [Estado: " << gisele.estado 
-          << " | PosY: " << gisele.posicaoY 
-          << " | Vel: " << gisele.velocidade << "]";
+          << " | PosY: " << gisele.posicaoY << "]";
     return saida;
 }

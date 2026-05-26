@@ -6,7 +6,7 @@
 
 class Coletavel {
 
-    private: 
+    protected: 
         int posicaoX;
         int posicaoY;
         std::string simbolo;

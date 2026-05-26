@@ -43,12 +43,12 @@ void Fase::gerarColetavel() {
 
     int tipo = std::rand() % 3;
     int x = 10;
-    int y = 0;
+    int y = (std::rand() % 2) + 1;
 
     Coletavel* novo = nullptr;
 
     if (tipo == 0) {
-        novo = new Rosa(x, y, 10);
+        novo = new Rosa(x, y);
     }
     else if (tipo == 1) {
         novo = new Banana(x, y);
