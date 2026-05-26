@@ -5,6 +5,16 @@ Sem GUI, sem persistência — interface 100% por linha de comando.
 
 ---
 
+## Alunos:
+- Allanis Beatriz - aboml
+- Cauã Emanuel - ceor
+- Elane Samara - esls
+- Jéssica Torres - jtm
+
+
+
+---
+
 ## Estrutura do projeto
 
 ```
