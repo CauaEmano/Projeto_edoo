@@ -14,11 +14,11 @@ void Jogo::iniciar() {
     rodando = true;
     
     cout << "Regras:\n"
-         << "A passarela tem 700 metros de extensão.\n"
-         << "A velocidade aumenta a cada 10 segundos de jogo.\n" 
-         << "Banana → zera as rosas; 3 bananas = game over.\n" 
-         << "Câmera → ofusca a tela por 1 segundo; 3 câmeras = game over.\n" 
-         << "Rosa → adiciona pontos ao placar final.\n\n";
+        << "A passarela tem 700 metros de extensão.\n"
+        << "A velocidade aumenta a cada 10 segundos de jogo.\n" 
+        << "Banana → zera as rosas; 3 bananas = game over.\n" 
+        << "Câmera → ofusca a tela por 1 segundo; 3 câmeras = game over.\n" 
+        << "Rosa → adiciona pontos ao placar final.\n\n";
 
     cout << "====================================\n\n";
     

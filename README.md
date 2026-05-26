@@ -75,6 +75,7 @@ gisele.exe      # Windows
 |-------|------------------|
 | `w`   | Pular            |
 | `s`   | Agachar          |
+| `p`   | Andar            |
 | `q`   | Sair do jogo     |
 
 ---
