@@ -22,7 +22,7 @@ void Jogo::iniciar() {
         bool entradaValida = false;
 
         while (!entradaValida) {
-            cout << "Acao: ";
+            cout << "Ação: ";
             cin >> entrada;
 
             try {
@@ -48,7 +48,7 @@ void Jogo::processarEntrada(char entrada) {
     } else if (entrada == 'q') {
         rodando = false;
     } else {
-        throw std::invalid_argument("Entrada inválida! Use w, s ou q!!!\n");
+        throw std::invalid_argument("Entrada inválida! Use [w], [s] ou [q]!\n");
     }
 }
 
@@ -61,16 +61,18 @@ void Jogo::atualizar() {
     
     for (auto it = coletaveis.begin(); it != coletaveis.end(); ) {
         
-        
         if (gisele.detectarColisao(**it)) {
             (*it)->aplicarEfeito(placar);
-            
             delete *it; 
             it = coletaveis.erase(it);
-        } else if ((*it)->getPosicaoX() < 0){
+        } 
+
+        else if ((*it)->getPosicaoX() < 0) {
             delete *it;
             it = coletaveis.erase(it);
-        } else {
+        }
+        
+        else {
             ++it; 
         }
     }
@@ -86,10 +88,12 @@ void Jogo::renderizar() const{
     cout << "Distância Percorrida: " << fase.getDistancia() << "/700\n";
     cout << "------------------------------------\n";
     cout << gisele << "\n"; 
+    
     const auto& coletaveis = fase.getColetaveis();
+    
     for (const Coletavel* c: coletaveis){
         if (c->getPosicaoX() <= 5){
-            cout << " >> Aproximando: " << c->getTipo() << " (distancia: " << c->getPosicaoX() << ")\n";
+            cout << " >> Aproximando: " << c->getTipo() << " (distância: " << c->getPosicaoX() << ")\n";
         }
     }
     cout << "====================================\n";

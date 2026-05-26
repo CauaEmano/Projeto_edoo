@@ -44,23 +44,12 @@ void Gisele::atualizarFisica() {
 }
 
 bool Gisele::detectarColisao(const Coletavel& c) const {
-    
     return (c.getPosicaoX() == 0) && (c.getPosicaoY() == this->posicaoY);
 }
 
-int Gisele::getPosicaoY() const {
-    return this->posicaoY;
-}
-
-std::string Gisele::getEstado() const {
-    return this->estado;
-}
-std::string Gisele::getSimbolo() const {
-    return this->simbolo;
-}
-
 std::ostream& operator<<(std::ostream& saida, const Gisele& gisele) {
-    saida << gisele.simbolo << " [Estado: " << gisele.estado 
+    saida << gisele.simbolo 
+          << " [Estado: " << gisele.estado 
           << " | PosY: " << gisele.posicaoY 
           << " | Vel: " << gisele.velocidade << "]";
     return saida;

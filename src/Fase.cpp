@@ -19,7 +19,7 @@ Fase::~Fase() {
 
 void Fase::atualizar(int deltaT) {
 
-    distanciaPercorrida += static_cast<int>(velocidadeAtual * deltaT); //Mantem em inteiro
+    distanciaPercorrida += static_cast<int>(velocidadeAtual * deltaT);   // Mantém em inteiro
     tempoNoUltimoCiclo += deltaT;
 
     if (tempoNoUltimoCiclo >= DURACAO_CICLO) {
@@ -28,7 +28,6 @@ void Fase::atualizar(int deltaT) {
         tempoNoUltimoCiclo = 0;
         std::cout << "[Fase] Ciclo " << ciclo
                 << " — velocidade: " << velocidadeAtual << "\n";
-
     }
 
     for (Coletavel* c: coletaveis){
@@ -60,24 +59,6 @@ void Fase::gerarColetavel() {
 
     coletaveis.push_back(novo);
 }
-
-std::vector<Coletavel*>& Fase::getColetaveis() {
-    return coletaveis;
-}
-
-const std::vector<Coletavel*>& Fase::getColetaveis() const {
-    return coletaveis; 
-}
-
-int Fase::getDistancia() const {
-    return this->distanciaPercorrida;
-}
-
-float Fase::getVelocidade() const {
-    return this->velocidadeAtual;
-}
-
-int Fase::getCiclo() const { return ciclo; }
 
 bool Fase::fimDaFase(const Placar& p) const {
     return distanciaPercorrida >= DISTANCIA_TOTAL || p.gameOver();

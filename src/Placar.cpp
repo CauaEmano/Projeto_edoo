@@ -8,22 +8,13 @@ void Placar::addRosas(int pts) {
 void Placar::zerarRosas() {
 	rosas = 0;
 }
-int Placar::getRosas() const {
-	return this->rosas;
-}
 
 void Placar::incrementarBananas() {
 	bananas++;
 }
-int Placar::getBananas() const {
-	return this->bananas;
-}
 
 void Placar::incrementarCameras() {
 	cameras++;
-}
-int Placar::getCameras() const {
-	return this->cameras;
 }
 
 bool Placar::gameOver() const {
@@ -32,8 +23,8 @@ bool Placar::gameOver() const {
 
 std::ostream& operator<<(std::ostream& os, const Placar& p) {
 	os << "=== Placar ===\n"
-		<< "Rosas  : " << p.rosas << "\n"
-		<< "Bananas: " << p.bananas << "\n"
-		<< "Cameras: " << p.cameras << "\n";
+	   << "Rosas  : " << p.rosas << "\n"
+	   << "Bananas: " << p.bananas << "\n"
+	   << "Cameras: " << p.cameras << "\n";
 	return os;
 } 
